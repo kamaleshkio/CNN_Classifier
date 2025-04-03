@@ -11,3 +11,10 @@ prepare_base_model:
   root_dir: artifacts/prepare_base_model
   base_model_path: artifacts/prepare_base_model/base_model.h5 #The .h5 file extension primarily indicates a file saved in the Hierarchical Data Format version 5 (HDF5), a versatile format used for storing various types of data, including scientific data, machine learning models, and more
   updated_base_model_path: artifacts/prepare_base_model/base_model_updated.h5 
+
+
+prepare_callback:
+  root_dir: artifacts/prepare_callback
+  tensorboard_root_log_dir: artifacts/prepare_callbacks/tensorboard_log_dir
+  checkpoint_model_filepath: artifacts/prepare_callbacks/checkpoint_dir/model.h5
+
