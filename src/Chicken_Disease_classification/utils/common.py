@@ -146,5 +146,5 @@ def read_yaml(path_to_yaml: Path) -> config_box:
     def encodeImageIntoBase64(cropedImagePath):
         with open(cropedImagePath, 'rb') as image_file:
             return base64.base64encode(image_file.read())
-            logger.info(f"Successfully encoded image into base64 '{cropedImagePath}'.")l
+            logger.info(f"Successfully encoded image into base64 '{cropedImagePath}'.")
             
