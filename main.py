@@ -1,5 +1,6 @@
 from src.Chicken_Disease_classification import logger
 from src.Chicken_Disease_classification.pipeline.Stage_01_Data_ingestion import DataIngestionTrainingPipeline
+from Chicken_Disease_classification.pipeline.Stage_02_Prepare_base_model import  PrepareBaseModelTrainingPipeline
 
 STAGE_NAME = 'Data Ingestion and Training'
 
@@ -14,3 +15,15 @@ except Exception as e:
     raise e
 
 
+STAGE_NAME = "Prepare Base Model Stage"
+
+try:
+    logger.info(f"****************************")
+    logger.info(f"Starting {STAGE_NAME}")
+    pipeline = PrepareBaseModelTrainingPipeline()
+    pipeline.main()
+    logger.info(f">>>>>>>>>>{STAGE_NAME} completed successfully<<<<<<<<<")
+
+except Exception as e:
+    logger.error(f"An error occurred during {STAGE_NAME}: {str(e)}")
+    raise e
