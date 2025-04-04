@@ -1,12 +1,13 @@
+import os
 from src.Chicken_Disease_classification.constants import *
 from Chicken_Disease_classification.utils.common import read_yaml, create_directory 
 from pathlib import Path
-from Chicken_Disease_classification.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig
+from Chicken_Disease_classification.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig
 
 
 
 class ConfigurationManager:
-    def __init__(
+      def __init__(
             self,
             config_file_path = CONFIG_FILE_PATH,
             params_file_path = PARAMS_FILE_PATH,):
@@ -16,7 +17,7 @@ class ConfigurationManager:
 
             create_directory([self.config.artifacts_root])
 
-    def get_ingetsion_config(self) -> DataIngestionConfig:
+      def get_ingetsion_config(self) -> DataIngestionConfig:
           config = self.config.data_ingestion
 
           create_directory([config.root_dir])
@@ -29,7 +30,7 @@ class ConfigurationManager:
           )
           return data_ingestion_config
     
-    def get_prepare_bases_model_config(self) -> PrepareBaseModelConfig:
+      def get_prepare_bases_model_config(self) -> PrepareBaseModelConfig:
           
           config = self.config.prepare_base_model 
           create_directory([config.root_dir])
@@ -46,3 +47,22 @@ class ConfigurationManager:
           )
           
           return prepare_base_model_config
+      
+      def get_prepare_callback_config(self) -> PrepareCallbacksConfig:
+        config = self.config.prepare_callbacks
+        model_ckpt_dir = os.path.dirname(config.checkpoint_model_filepath)
+        create_directory([
+            Path(model_ckpt_dir),
+            Path(config.tensorboard_root_log_dir)
+        ])
+
+        prepare_callback_config = PrepareCallbacksConfig(
+            root_dir=Path(config.root_dir),
+            tensorboard_root_log_dir=Path(config.tensorboard_root_log_dir),
+            checkpoint_model_filepath=Path(config.checkpoint_model_filepath)
+        )
+
+        return prepare_callback_config
+
+
+      
