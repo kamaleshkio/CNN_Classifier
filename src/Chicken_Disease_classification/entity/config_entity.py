@@ -40,3 +40,10 @@ class TrainingConfig:
     params_image_size: list
 
 
+@dataclass(frozen=True)
+class EvaluationConfig:
+    model_path: Path
+    training_data_path: Path
+    all_params: dict
+    params_image_size: list
+    params_batch_size: int

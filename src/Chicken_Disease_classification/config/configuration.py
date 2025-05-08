@@ -2,7 +2,11 @@ import os
 from src.Chicken_Disease_classification.constants import *
 from src.Chicken_Disease_classification.utils.common import read_yaml, create_directory 
 from pathlib import Path
-from src.Chicken_Disease_classification.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig
+from src.Chicken_Disease_classification.entity.config_entity import (DataIngestionConfig,
+                                                                     PrepareBaseModelConfig,
+                                                                     PrepareCallbacksConfig,
+                                                                     TrainingConfig,
+                                                                     EvaluationConfig)
 
 
 
@@ -91,3 +95,15 @@ class ConfigurationManager:
         )
 
         return training_config
+      
+      def get_validation_config(self) -> EvaluationConfig:
+
+        eval_config = EvaluationConfig(
+            model_path=Path("artifacts/training/model.keras"),
+            training_data_path=Path("artifacts/data_ingestion/Chicken-fecal-images"),
+            all_params=self.params,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+        return eval_config
+    

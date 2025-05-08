@@ -1,5 +1,6 @@
 -e .
 tensorflow
+tensorflow-gpu
 pandas
 dvc
 notebook
