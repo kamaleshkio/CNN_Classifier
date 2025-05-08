@@ -1,6 +1,6 @@
-from Chicken_Disease_classification.config.configuration import ConfigurationManager
-from Chicken_Disease_classification.components.data_ingestion import DataIngestion
-from Chicken_Disease_classification import logger
+from src.Chicken_Disease_classification.config.configuration import ConfigurationManager
+from src.Chicken_Disease_classification.components.data_ingestion import DataIngestion
+from src.Chicken_Disease_classification import logger
 
 STAGE_NAME = "Data Ingestion Stage"
 

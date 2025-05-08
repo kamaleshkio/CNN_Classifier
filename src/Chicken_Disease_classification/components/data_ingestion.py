@@ -2,8 +2,8 @@ import os
 import urllib.request as request
 import zipfile
 from src.Chicken_Disease_classification import logger
-from Chicken_Disease_classification.utils.common import get_size
-from Chicken_Disease_classification.config.configuration import DataIngestionConfig
+from src.Chicken_Disease_classification.utils.common import get_size
+from src.Chicken_Disease_classification.config.configuration import DataIngestionConfig
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):

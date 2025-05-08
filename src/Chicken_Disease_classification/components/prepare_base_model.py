@@ -3,7 +3,7 @@ import pathlib as Path
 import urllib.request as request
 from zipfile import ZipFile
 import tensorflow as tf  #---> calling VG16 form Tensor flow Keras
-from Chicken_Disease_classification.entity.config_entity import PrepareBaseModelConfig
+from src.Chicken_Disease_classification.entity.config_entity import PrepareBaseModelConfig
 
 
 class PrepareBaseModel:

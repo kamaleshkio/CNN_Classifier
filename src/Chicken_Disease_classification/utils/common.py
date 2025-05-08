@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from Chicken_Disease_classification import logger
+from src.Chicken_Disease_classification import logger
 import json
 import joblib
 from ensure import ensure_annotations

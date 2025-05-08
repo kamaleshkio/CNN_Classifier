@@ -1,4 +1,4 @@
-from Chicken_Disease_classification.entity.config_entity import TrainingConfig
+from src.Chicken_Disease_classification.entity.config_entity import TrainingConfig
 import os
 import tensorflow as tf
 from pathlib import Path
@@ -73,6 +73,9 @@ class Training:
 
         try:
             # Train the model using the train and validation generators
+            import tensorflow as tf ##------------>added to avoid error in the pipeline (08/05/2025)
+            # Enable
+            tf.config.run_functions_eagerly(True)
             self.model.fit(
                 self.train_generator,
                 epochs=self.config.params_epochs,

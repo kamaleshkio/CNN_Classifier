@@ -1,7 +1,7 @@
-from Chicken_Disease_classification.config.configuration import ConfigurationManager
-from Chicken_Disease_classification.components.prepare_callback import PrepareCallback
-from Chicken_Disease_classification.components.training import Training
-from Chicken_Disease_classification import logger
+from src.Chicken_Disease_classification.config.configuration import ConfigurationManager
+from src.Chicken_Disease_classification.components.prepare_callback import PrepareCallback
+from src.Chicken_Disease_classification.components.training import Training
+from src.Chicken_Disease_classification import logger
 
 STAGE_NAME = "Training"
 

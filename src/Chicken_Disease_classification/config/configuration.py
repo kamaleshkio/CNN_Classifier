@@ -1,8 +1,8 @@
 import os
 from src.Chicken_Disease_classification.constants import *
-from Chicken_Disease_classification.utils.common import read_yaml, create_directory 
+from src.Chicken_Disease_classification.utils.common import read_yaml, create_directory 
 from pathlib import Path
-from Chicken_Disease_classification.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig
+from src.Chicken_Disease_classification.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig
 
 
 
