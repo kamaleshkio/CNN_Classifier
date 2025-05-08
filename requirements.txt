@@ -14,5 +14,5 @@ ensure
 joblib
 types-pyYAML
 scipy
-Flask
-Flask-Cors
+streamlit
+
